@@ -21,6 +21,9 @@ module.exports = {
           9 : "#383838",
         },
         "gray-link" : "#007185",
+      },
+      fontFamily : {
+        "yekan" : "yekan"
       }
     },
   },

@@ -17,6 +17,7 @@ function Header() {
           <Cart />
         </div>
       </div>
+      <Menu/>
     </header>
   );
 }
