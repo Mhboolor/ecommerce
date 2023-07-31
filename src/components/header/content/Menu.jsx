@@ -4,6 +4,7 @@ import { BiChevronDown } from "react-icons/bi";
 import { MdClose } from "react-icons/md";
 
 function Menu() {
+  
   const menu = [
     {
       title: "قطعات کامپیوتر",
@@ -53,7 +54,7 @@ function Menu() {
         </button>
       </div>
       <nav className="container m-auto">
-        <ul className="flex flex-col h-full w-full justify-around p-4 sm:flex-row sm:relative sm:items-center">
+        <ul className="flex flex-col h-full w-full justify-around sm:flex-row sm:relative sm:items-center">
           {menu.map((item) => (
             <li className="text-gray-4 group relative sm:static">
               <Link
