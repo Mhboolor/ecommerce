@@ -35,10 +35,10 @@ function Menu() {
                 {
                     menu.map(item => (
                         <ul>
-                            <li className='text-gray-9 text-md'>{item.title}</li>
+                            <li className='text-gray-9 text-base'>{item.title}</li>
                             {
                                 item.items.map(sub => (
-                                    <li><Link to={sub.link} className='text-xs text-gray-3'>{sub.name}</Link></li>
+                                    <li><Link to={sub.link} className='text-sm text-gray-3'>{sub.name}</Link></li>
                                 ))
                             }
                         </ul>
