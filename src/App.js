@@ -5,9 +5,7 @@ import Header from "./components/header/Header";
 function App() {
   return (
     <div className="bg-light">
-      <header>
-        <Header/>
-      </header>
+      <Header/>
       <main>
 
       </main>
