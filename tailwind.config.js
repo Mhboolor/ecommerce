@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    backdropGrayscale : {
+      "light" : "#eff0f2",
+    }
   },
   plugins: [],
 }
