@@ -11,9 +11,7 @@ function App() {
       <main>
 
       </main>
-      <footer>
-        <Footer/>
-      </footer>
+      <Footer/>
       <CopyRight/>
     </div>
   );

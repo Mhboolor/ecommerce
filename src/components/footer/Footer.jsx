@@ -1,15 +1,13 @@
 import React from 'react'
-import IconList from './content/IconList'
-import Address from './content/Address'
-import Menu from './content/Menu'
+import {IconList , Address , Menu} from "./index"
 
 function Footer() {
   return (
-    <div>
+    <footer>
         <IconList/>
         <Address/>
         <Menu/>
-    </div>
+    </footer>
   )
 }
 
