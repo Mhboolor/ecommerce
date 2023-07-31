@@ -5,7 +5,7 @@ module.exports = {
   ],
   theme: {
     extend: {},
-    backdropGrayscale : {
+    backgroundColor : {
       "light" : "#eff0f2",
     }
   },
