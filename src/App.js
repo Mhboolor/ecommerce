@@ -1,3 +1,4 @@
+import CopyRight from "./components/copyRight/CopyRight";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 
@@ -13,6 +14,7 @@ function App() {
       <footer>
         <Footer/>
       </footer>
+      <CopyRight/>
     </div>
   );
 }

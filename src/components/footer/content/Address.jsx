@@ -5,9 +5,9 @@ import {FaTelegram} from "react-icons/fa6"
 
 function Address() {
   return (
-    <div className='container m-auto flex items-center justify-around py-4'>
+    <div className='container m-auto flex items-center justify-around py-5 flex-col gap-4 px-4 sm:flex-row sm:px-0'>
         <div className='flex items-center justify-center gap-1 text-gray-2'>
-            <MdLocationPin className='text-xl'/>
+            <MdLocationPin className=' text-xl'/>
             <p> تهران، خیابان ولیعصر، نرسیده به بزرگمهر، بن بست گلساز، پلاک ۲، طبقه منفی ۱، کد پستی ۱۴۱۶۹۴۴۱۳۹</p>
         </div>
         <div className='flex items-center justify-center divide-x divide-x-reverse divide-[#ddd]'>
