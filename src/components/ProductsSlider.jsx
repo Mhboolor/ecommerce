@@ -48,10 +48,12 @@ function ProductsSlider({ link, title, products }) {
                 <p className="line-clamp-2 text-xs text-gray-4 text-justify">
                   {slide.info}
                 </p>
-                <div className="text-base text-gray-9 flex items-center gap-1">
-                  <span>{slide.price}</span>
-                  <span>تومان</span>
-                </div>
+                {slide.price ? (
+                  <div className="text-base text-gray-9 flex items-center gap-1">
+                    <span>{slide.price}</span>
+                    <span>تومان</span>
+                  </div>
+                ) : null}
               </div>
             </div>
           </SwiperSlide>

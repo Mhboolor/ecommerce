@@ -7,6 +7,8 @@ import UpdateBanner from '../components/home/updareBanner/UpdateBanner'
 import ProductBox from '../components/home/productBox/ProductBox'
 import NewProduct from '../components/home/newProduct/NewProduct'
 import BestSelling from '../components/home/bestselling/BestSelling'
+import SsdBanner from '../components/home/ssdBanner/SsdBanner'
+import Blogs from '../components/home/blogs/Blogs'
 
 function Home() {
   return (
@@ -19,6 +21,8 @@ function Home() {
         <ProductBox/>
         <NewProduct/>
         <BestSelling/>
+        <SsdBanner/>
+        <Blogs/>
     </div>
   )
 }
