@@ -1,0 +1,11 @@
+export {default as BestSelling} from "./bestselling/BestSelling";
+export {default as Blogs} from "./blogs/Blogs";
+export {default as CategoryImg} from "./categoryImg/CategoryImg";
+export {default as CategorySlider} from "./categorySlider/CategorySlider";
+export {default as HeroSlider} from "./heroSlider/HeroSlider";
+export {default as LapTop} from "./laptop/LapTop";
+export {default as NewProduct} from "./newProduct/NewProduct";
+export {default as OfferSlider} from "./offer/OfferSlider";
+export {default as ProductBox} from "./productBox/ProductBox";
+export {default as SsdBanner} from "./ssdBanner/SsdBanner";
+export {default as UpdateBanner} from "./updateBanner/UpdateBanner";
