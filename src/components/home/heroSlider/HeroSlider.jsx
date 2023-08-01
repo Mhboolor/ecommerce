@@ -6,7 +6,7 @@ import { Navigation , Autoplay} from "swiper/modules";
 
 function HeroSlider() {
   return (
-    <div className="container m-auto heroSlider">
+    <div className="container m-auto heroSlider my-6">
       <Swiper
         dir="ltr"
         navigation={true}

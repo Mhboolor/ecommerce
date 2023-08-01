@@ -23,3 +23,11 @@
   color: black;
   font-weight: bolder;
 }
+
+.categorySlider .swiper-button-prev:after, .swiper-button-next:after {
+  font-size: 20px!important;
+}
+.categorySlider .swiper-button-prev:after, .swiper-button-next:after {
+  color: black;
+  font-weight: bolder;
+}
