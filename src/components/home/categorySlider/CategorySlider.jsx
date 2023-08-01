@@ -10,7 +10,6 @@ function CategorySlider() {
       <Swiper
         slidesPerView={3}
         spaceBetween={10}
-        centeredSlides={true}
         grabCursor={true}
         navigation={true}
         loop={true}
