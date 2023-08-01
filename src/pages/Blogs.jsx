@@ -1,7 +1,8 @@
 import React from "react";
 import BreadCrumb from "../components/BreadCrumb";
 import Blog from "../components/blogs/blog/Blog";
-import { MdSearch } from "react-icons/md";
+import SearchBox from "../components/blogs/search/SearchBox";
+import CategoryBox from "../components/blogs/category/CategoryBox";
 
 
 function Blogs() {
@@ -17,16 +18,9 @@ function Blogs() {
         <div>
             <Blog/>
         </div>
-        <div>
-            <div className="shadow-md rounded-xl bg-white">
-                <div className="border-b">
-                    <h2 className="text-[#df1e2f] text-sm font-semibold">جستجو در وبلاگ</h2>
-                </div>
-                <div className="rounded-xl border">
-                    <input type="text" placeholder="جستجو در وبلاگ ..." className="bg-transparent"/>
-                    <button className="text-white text-base"><MdSearch/></button>
-                </div>
-            </div>
+        <div className="min-w-[25%] flex flex-col gap-5">
+            <SearchBox/>
+            <CategoryBox/>
         </div>
       </div>
     </div>
