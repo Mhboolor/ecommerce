@@ -3,6 +3,8 @@ import BreadCrumb from "../components/BreadCrumb";
 import Blog from "../components/blogs/blog/Blog";
 import SearchBox from "../components/blogs/search/SearchBox";
 import CategoryBox from "../components/blogs/category/CategoryBox";
+import Banner from "../components/blogs/banner/Banner";
+import LastBlogs from "../components/blogs/lastBlogs/LastBlogs";
 
 
 function Blogs() {
@@ -21,6 +23,8 @@ function Blogs() {
         <div className="min-w-[25%] flex flex-col gap-5">
             <SearchBox/>
             <CategoryBox/>
+            <Banner/>
+            <LastBlogs/>
         </div>
       </div>
     </div>
