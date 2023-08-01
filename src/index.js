@@ -1,14 +1,12 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './global.css';
-import App from './App';
-import { BrowserRouter } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './routes/router';
 
 const root = createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
     <StrictMode>
-      <App />
+      <RouterProvider router={router}/>
     </StrictMode>
-  </BrowserRouter>
 );
