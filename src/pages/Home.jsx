@@ -4,6 +4,9 @@ import CategorySlider from '../components/home/categorySlider/CategorySlider'
 import OfferSlider from '../components/home/offer/OfferSlider'
 import LapTop from '../components/home/laptop/LapTop'
 import UpdateBanner from '../components/home/updareBanner/UpdateBanner'
+import ProductBox from '../components/home/productBox/ProductBox'
+import NewProduct from '../components/home/newProduct/NewProduct'
+import BestSelling from '../components/home/bestselling/BestSelling'
 
 function Home() {
   return (
@@ -13,6 +16,9 @@ function Home() {
         <OfferSlider/>
         <LapTop/>
         <UpdateBanner/>
+        <ProductBox/>
+        <NewProduct/>
+        <BestSelling/>
     </div>
   )
 }

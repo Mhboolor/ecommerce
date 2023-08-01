@@ -6,7 +6,7 @@ import { Navigation} from "swiper/modules";
 
 function CategorySlider() {
   return (
-    <div className="container m-auto categorySlider my-6">
+    <div className="container m-auto categorySlider my-6 px-4 sm:px-0">
       <Swiper
         slidesPerView={3}
         spaceBetween={10}

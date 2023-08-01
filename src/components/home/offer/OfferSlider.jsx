@@ -8,10 +8,10 @@ import { Link } from "react-router-dom";
 function OfferSlider() {
   return (
     <div
-      className="bg-cover bg-center bg-no-repeat pt-5 pb-10 offer"
+      className="bg-cover bg-center bg-no-repeat pt-5 pb-10 offer "
       style={{ backgroundImage: `url('./images/home/offer/offer_bg.svg')` }}
     >
-      <div className="container m-auto">
+      <div className="container m-auto px-4 sm:px-0">
         <div className="flex items-center justify-between gap-4 text-white text-lg mb-5">
           <span>خرید هیجانی</span>
           <span className="flex-1 border-b"></span>

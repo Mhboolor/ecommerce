@@ -7,12 +7,17 @@ import { Navigation } from "swiper/modules";
 
 function ProductsSlider({ link, title, products }) {
   return (
-    <div className="container m-auto rounded-md bg-white shadow-md my-6 laptop">
+    <div className="container m-auto rounded-md bg-white shadow-md my-6 productsSlider">
       <div className="flex items-center justify-between px-4 py-2">
         <span className="text-gray-4 text-lg">{title}</span>
-        <Link to={link} className="text-gray-link underline decoration-dotted">
-          مشاهده همه
-        </Link>
+        {link ? (
+          <Link
+            to={link}
+            className="text-gray-link underline decoration-dotted"
+          >
+            مشاهده همه
+          </Link>
+        ) : null}
       </div>
       <Swiper
         slidesPerView={2}
@@ -40,7 +45,9 @@ function ProductsSlider({ link, title, products }) {
                 className="m-auto my-5"
               />
               <div className="flex flex-col items-end p-4 gap-5">
-                <p className="line-clamp-2 text-xs text-gray-4 text-justify">{slide.info}</p>
+                <p className="line-clamp-2 text-xs text-gray-4 text-justify">
+                  {slide.info}
+                </p>
                 <div className="text-base text-gray-9 flex items-center gap-1">
                   <span>{slide.price}</span>
                   <span>تومان</span>

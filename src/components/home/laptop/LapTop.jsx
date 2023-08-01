@@ -107,7 +107,11 @@ function LapTop() {
     },
   ];
 
-  return <ProductsSlider title={"لپ تاپ"} link={""} products={products}/>;
+  return (
+    <div className="container m-auto px-4 sm:px-0">
+      <ProductsSlider title={"لپ تاپ"} link={""} products={products} />
+    </div>
+  );
 }
 
 export default LapTop;

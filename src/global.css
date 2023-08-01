@@ -29,11 +29,6 @@
 /* Category Slider Costum */
 .categorySlider .swiper-button-prev:after{
   font-size: 16px!important;
-}
-.categorySlider .swiper-button-next:after{
-  font-size: 16px!important;
-}
-.categorySlider .swiper-button-prev:after{
   color: #000;
   font-weight: bolder;
   background: rgba(255, 255, 255, 0.7);
@@ -41,6 +36,7 @@
   padding: 5px 8px;
 }
 .categorySlider .swiper-button-next:after{
+  font-size: 16px!important;
   color: #000;
   font-weight: bolder;
   background: rgba(255, 255, 255, 0.7);
@@ -51,11 +47,6 @@
 /* Offer Slider Costum */
 .offer .swiper-button-prev:after{
   font-size: 16px!important;
-}
-.offer .swiper-button-next:after{
-  font-size: 16px!important;
-}
-.offer .swiper-button-prev:after{
   color: #000;
   font-weight: bolder;
   background: rgba(255, 255, 255);
@@ -63,30 +54,40 @@
   padding: 5px 8px;
 }
 .offer .swiper-button-next:after{
-  color: #000;
-  font-weight: bolder;
-  background: rgba(255, 255, 255);
-  border-radius: 50%;
-  padding: 5px 8px;
-}
-/* laptop Slider Costum */
-.laptop .swiper-button-prev:after{
   font-size: 16px!important;
+  color: #000;
+  font-weight: bolder;
+  background: rgba(255, 255, 255);
+  border-radius: 50%;
+  padding: 5px 8px;
 }
-.laptop .swiper-button-next:after{
+
+/* productsSlider Slider Costum */
+.productsSlider .swiper-button-prev:after{
   font-size: 16px!important;
-}
-.laptop .swiper-button-prev:after{
   color: #000;
   font-weight: bolder;
   background: rgba(255, 255, 255);
   border-radius: 50%;
   padding: 5px 8px;
 }
-.laptop .swiper-button-next:after{
+.productsSlider .swiper-button-next:after{
+  font-size: 16px!important;
   color: #000;
   font-weight: bolder;
   background: rgba(255, 255, 255);
   border-radius: 50%;
   padding: 5px 8px;
+}
+.productsSlider .swiper-button-prev{
+  background-color: white;
+  box-shadow: 1px 0 3px #c8c8c8;
+  right: 0!important;
+  border-radius: 5px 0 0 5px;
+}
+.productsSlider .swiper-button-next{
+  background-color: white;
+  box-shadow: 1px 0 3px #c8c8c8;
+  left: 0!important;
+  border-radius: 0 5px 5px 0;
 }
