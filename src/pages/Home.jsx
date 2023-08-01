@@ -9,6 +9,7 @@ import NewProduct from '../components/home/newProduct/NewProduct'
 import BestSelling from '../components/home/bestselling/BestSelling'
 import SsdBanner from '../components/home/ssdBanner/SsdBanner'
 import Blogs from '../components/home/blogs/Blogs'
+import CategoryImg from '../components/home/categoryImg/CategoryImg'
 
 function Home() {
   return (
@@ -19,6 +20,7 @@ function Home() {
         <LapTop/>
         <UpdateBanner/>
         <ProductBox/>
+        <CategoryImg/>
         <NewProduct/>
         <BestSelling/>
         <SsdBanner/>
