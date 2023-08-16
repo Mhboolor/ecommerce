@@ -16,7 +16,7 @@ function Blogs() {
         hereLink={"/blogs"}
         here={"مقالات"}
       />
-      <div className="flex flex-col lg:flex-row gap-5">
+      <div className="flex flex-col lg:flex-row gap-5 mb-5">
         <div>
             <Blog/>
         </div>
