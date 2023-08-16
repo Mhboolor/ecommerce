@@ -5,7 +5,7 @@ import Header from "./components/header/Header";
 
 function App() {
   return (
-    <div className="bg-light relative">
+    <div className="bg-light relative flex flex-col gap-6">
       <Header/>
       <main>
         <Outlet/>
