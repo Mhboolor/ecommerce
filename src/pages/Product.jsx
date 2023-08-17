@@ -3,6 +3,8 @@ import BreadCrumb from '../components/BreadCrumb'
 import ProductsSlider from '../components/ProductsSlider'
 import ProductImage from '../components/product/content/ProductImage'
 import ProductInfo from '../components/product/content/ProductInfo'
+import TechnicalInfo from '../components/product/content/TechnicalInfo'
+import Comment from '../components/product/content/Comment'
 
 
 
@@ -19,14 +21,18 @@ function Product() {
   ]
 
   return (
-    <div className='container m-auto px-4 sm:p-0'>
+    <div className='container m-auto px-4 sm:p-0 flex flex-col'>
       <BreadCrumb prev={"صفحه اصلی"} prevLink={""} here={"محصول"} hereLink={""}/>
-      <div className='bg-white shadow-md rounded-lg divide-x divide-x-reverse flex items-start gap-4'>
+      <div className='bg-white shadow-md rounded-lg lg:divide-x lg:divide-x-reverse flex items-start gap-4 p-4 flex-col lg:flex-row'>
         <ProductImage/>
         <ProductInfo/>
       </div>
-      <div></div>
-      <div></div>
+      <div className='bg-white shadow-md rounded-lg flex items-start gap-4 p-4 mt-6'>
+        <TechnicalInfo/>
+      </div>
+      <div className='bg-white shadow-md rounded-lg flex items-start gap-4 p-4 mt-6'>
+        <Comment/>
+      </div>
       <div>
       <ProductsSlider title={'کالاهای مرتبط'} products={products}/>
       </div>

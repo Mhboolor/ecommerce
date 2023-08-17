@@ -46,7 +46,7 @@ function Menu() {
   ];
 
   return (
-    <div className="absolute right-0 top-0 max-w-xs w-full z-50 h-screen bg-white sm:border-t sm:border-[#e2e2e2] sm:shadow-sm sm:h-auto sm:relative sm:w-auto sm:max-w-none">
+    <div className="absolute right-0 top-0 max-w-xs w-full hidden z-50 h-screen bg-white sm:border-t sm:border-[#e2e2e2] sm:shadow-sm sm:h-auto sm:relative sm:w-auto sm:max-w-none">
       <div className="flex items-center justify-between p-2 text-2xl sm:hidden">
         <img src="./images/logo-sm.png" alt="logo" className="w-28 h-6"/>
         <button>
