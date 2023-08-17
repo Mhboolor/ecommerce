@@ -11,7 +11,7 @@ function Comment() {
           <p>دیدگاه شما</p>
         </div>
         <div className='flex flex-col gap-4'>
-          <div className='flex gap-8'>
+          <div className='flex gap-8 flex-col md:flex-row'>
             <div className='flex-1 flex flex-col gap-1'>
               <label htmlFor="FirstComment" className='text-sm text-[#212529]'>نام</label>
               <input type="text" name="" id="FirstComment" className='border border-[#ced4da] rounded-md py-1 px-2'/>
