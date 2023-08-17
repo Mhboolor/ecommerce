@@ -1,6 +1,10 @@
 import React from 'react'
 import BreadCrumb from '../components/BreadCrumb'
 import ProductsSlider from '../components/ProductsSlider'
+import ProductImage from '../components/product/content/ProductImage'
+import ProductInfo from '../components/product/content/ProductInfo'
+
+
 
 function Product() {
 
@@ -17,7 +21,10 @@ function Product() {
   return (
     <div className='container m-auto px-4 sm:p-0'>
       <BreadCrumb prev={"صفحه اصلی"} prevLink={""} here={"محصول"} hereLink={""}/>
-      <div></div>
+      <div className='bg-white shadow-md rounded-lg divide-x divide-x-reverse flex items-start gap-4'>
+        <ProductImage/>
+        <ProductInfo/>
+      </div>
       <div></div>
       <div></div>
       <div>

@@ -91,3 +91,15 @@
   left: 0!important;
   border-radius: 0 5px 5px 0;
 }
+
+/* Product Image Slider  Costum*/
+.product-slider-image{
+  width: 300px;
+  height: 300px;
+}
+.product-slider-image .swiper-slide{
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
