@@ -1,6 +1,6 @@
 import React from "react";
-import BreadCrumb from "../components/BreadCrumb";
-import {FilterBox , Sorting , Product , Heading} from "../components/products/index"
+import BreadCrumb from "../../components/BreadCrumb";
+import {FilterBox , Sorting , Product , Heading} from "../../components/shop/products/index"
 
 
 

@@ -1,10 +1,10 @@
 import React from 'react'
-import BreadCrumb from '../components/BreadCrumb'
-import ProductsSlider from '../components/ProductsSlider'
-import ProductImage from '../components/product/content/ProductImage'
-import ProductInfo from '../components/product/content/ProductInfo'
-import TechnicalInfo from '../components/product/content/TechnicalInfo'
-import Comment from '../components/product/content/Comment'
+import BreadCrumb from '../../components/BreadCrumb'
+import ProductsSlider from '../../components/ProductsSlider'
+import ProductImage from '../../components/shop/product/content/ProductImage'
+import ProductInfo from '../../components/shop/product/content/ProductInfo'
+import TechnicalInfo from '../../components/shop/product/content/TechnicalInfo'
+import Comment from '../../components/shop/product/content/Comment'
 
 
 

@@ -1,5 +1,5 @@
 import React from "react";
-import ProductsSlider from "../../ProductsSlider";
+import ProductsSlider from "../../../ProductsSlider";
 
 function LapTop() {
   const products = [

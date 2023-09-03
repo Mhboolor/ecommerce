@@ -11,7 +11,7 @@ import {
   BestSelling,
   SsdBanner,
   Blogs,
-} from "../components/home/index";
+} from "../../components/shop/home/index";
 
 function Home() {
   return (

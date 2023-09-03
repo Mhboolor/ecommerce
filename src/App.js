@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import CopyRight from "./components/copyRight/CopyRight";
-import Footer from "./components/footer/Footer";
-import Header from "./components/header/Header";
+import CopyRight from "./components/shop/copyRight/CopyRight";
+import Footer from "./components/shop/footer/Footer";
+import Header from "./components/shop/header/Header";
 
 function App() {
   return (

@@ -1,10 +1,10 @@
 import React from "react";
-import BreadCrumb from "../components/BreadCrumb";
-import Blog from "../components/blogs/blog/Blog";
-import SearchBox from "../components/blogs/search/SearchBox";
-import CategoryBox from "../components/blogs/category/CategoryBox";
-import Banner from "../components/blogs/banner/Banner";
-import LastBlogs from "../components/blogs/lastBlogs/LastBlogs";
+import BreadCrumb from "../../components/BreadCrumb";
+import Blog from "../../components/shop/blogs/blog/Blog";
+import SearchBox from "../../components/shop/blogs/search/SearchBox";
+import CategoryBox from "../../components/shop/blogs/category/CategoryBox";
+import Banner from "../../components/shop/blogs/banner/Banner";
+import LastBlogs from "../../components/shop/blogs/lastBlogs/LastBlogs";
 
 
 function Blogs() {

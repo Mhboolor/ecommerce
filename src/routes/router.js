@@ -1,13 +1,21 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../pages/Home";
-import ErrorPage from "../pages/ErrorPage";
+
+// Shop Router Path
 import App from "../App";
-import Blogs from "../pages/Blogs";
-import Login from "../pages/Login";
-import Product from "../pages/Product";
-import Products from "../pages/Products";
+import ErrorPage from "../pages/shop/ErrorPage";
+import Home from "../pages/shop/Home";
+import Blogs from "../pages/shop/Blogs";
+import Login from "../pages/shop/Login";
+import Product from "../pages/shop/Product";
+import Products from "../pages/shop/Products";
+import Dashboard from "../pages/dashboard/Dashboard";
+
+// Dashboard Admin Router Path
+import DashboardAdmin from "../pages/dashboard/Login";
 
 export const router = createBrowserRouter([
+  
+  // Shop Path
   {
     path: "/",
     element: <App />,
@@ -19,5 +27,15 @@ export const router = createBrowserRouter([
       { path: "/products", element: <Products /> },
       { path: "/product", element: <Product /> },
     ],
+  },
+
+  // Dashboard Path
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+  },
+  {
+    path: "dashboard/login",
+    element: <DashboardAdmin />,
   },
 ]);
