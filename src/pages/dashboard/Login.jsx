@@ -23,12 +23,12 @@ function Login() {
     dispatch(authUser(mobile));
   };
   const checkOtp = (data) => {
-    dispatch(checkCode(data)) 
+    dispatch(checkCode(data));
   };
 
   return (
     <div className="flex items-center justify-center w-full h-screen bg-white">
-      <div className="absolute left-0 top-0 h-full hidden md:flex">
+      <div className="absolute left-0 top-0 h-full">
         <img
           src="../images/dashboard/login/wave.png"
           alt=""
@@ -68,7 +68,7 @@ function Login() {
                 type="text"
                 id="phone"
                 placeholder="شماره موبایل خود را وارد کنید ..."
-                className="w-full outline-none bg-transparent peer group border-b p-2 focus:border-b-green-500"
+                className="w-full outline-none bg-transparent peer group border-b p-2 focus:border-b-green-500 placeholder:text-black placeholder:md:text-slate-400"
                 readOnly={otp ? true : false}
               />
               <label htmlFor="phone" className=" peer-focus:text-green-500">
@@ -76,7 +76,7 @@ function Login() {
               </label>
             </div>
             {errors.mobile && (
-              <p className="text-sm text-center text-red-500">
+              <p className="text-sm text-center text-red-600">
                 {errors.mobile.message}
               </p>
             )}
@@ -92,20 +92,20 @@ function Login() {
                     })}
                     id="phone"
                     placeholder="کد ارسال شده را وارد کنید ..."
-                    className="w-full outline-none bg-transparent peer group border-b p-2 focus:border-b-green-500"
+                    className="w-full outline-none bg-transparent peer group border-b p-2 focus:border-b-green-500 placeholder:text-black placeholder:md:text-slate-400"
                   />
                   <label htmlFor="phone" className=" peer-focus:text-green-500">
                     <TbNumbers className="text-2xl" />
                   </label>
                 </div>
                 {errors.code && (
-                  <p className="text-sm text-center text-red-500">
+                  <p className="text-sm text-center text-red-600">
                     {errors.code.message}
                   </p>
                 )}
               </>
             ) : null}
-            <button className="flex items-center justify-center bg-green-500 py-1 rounded-2xl w-full text-white font-semibold">
+            <button className="flex items-center justify-center bg-white text-black md:bg-green-500 py-1 rounded-2xl w-full md:text-white font-semibold">
               ادامه
             </button>
           </form>
