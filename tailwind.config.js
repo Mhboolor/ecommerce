@@ -7,7 +7,8 @@ module.exports = {
     extend: {
       backgroundColor : {
         "light" : "#eff0f2",
-        "success" : "#17C176"
+        "success" : "#17C176",
+        "menu-hover" : "#f1faff"
       },
       colors : {
         "gray" : {
@@ -22,6 +23,7 @@ module.exports = {
           9 : "#383838",
         },
         "gray-link" : "#007185",
+        "menu-hover" : "#0095e8",
       },
       fontFamily : {
         "yekan" : "yekan"
