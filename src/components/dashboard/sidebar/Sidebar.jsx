@@ -3,7 +3,7 @@ import { BsDot } from "react-icons/bs";
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-function Sidebar() {
+function Sidebar({ showMenu }) {
   const [menu, setMenu] = useState([
     {
       title: "پیشخوان",
@@ -42,7 +42,9 @@ function Sidebar() {
   };
 
   return (
-    <aside className="bg-[#fff] border-l w-full max-w-xs p-5 flex flex-col gap-3 h-screen overflow-y-auto">
+    <aside
+      className={`bg-[#fff] border-l w-full max-w-xs p-5 flex flex-col gap-3 h-screen overflow-y-auto duration-150 translate-x-96 md:translate-x-0 ${showMenu && "translate-x-0"}`}
+    >
       <p>داشبورد</p>
       <ul className="text-sm text-[#5e6278]">
         {menu

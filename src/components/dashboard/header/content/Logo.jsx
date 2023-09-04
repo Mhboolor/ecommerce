@@ -2,10 +2,13 @@ import React from "react";
 import { RiMenu5Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
-function Logo() {
+function Logo({ ShowMenuHandler }) {
   return (
     <div className="flex items-center gap-5">
-      <button className="text-2xl bg-gray-200 p-1 rounded-md text-gray-6 duration-150 hover:bg-gray-300">
+      <button
+        className="text-2xl bg-gray-200 p-1 rounded-md text-gray-6 duration-150 hover:bg-gray-300 md:hidden"
+        onClick={() => ShowMenuHandler()}
+      >
         <RiMenu5Line />
       </button>
       <Link>

@@ -2,22 +2,28 @@ import { useSelector } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
 import Header from "../../components/dashboard/header/Header";
 import Sidebar from "../../components/dashboard/sidebar/Sidebar";
+import { useState } from "react";
 
 function Dashboard() {
   const { role, isLogin } = useSelector((state) => state.login);
+  const [showMenu, setShowMenu] = useState(false);
+
+  const ShowMenuHandler = () => {
+    setShowMenu((prev) => !prev);
+  };
 
   // if (role === "ADMIN" && isLogin) {
-    return (
-      <div className="flex flex-col bg-[#fff]">
-        <Header />
-        <div className="flex">
-          <Sidebar />
-          <div>
-            <Outlet />
-          </div>
+  return (
+    <div className="flex flex-col bg-[#fff]">
+      <Header ShowMenuHandler={ShowMenuHandler} showMenu={showMenu} />
+      <div className="flex">
+        <Sidebar showMenu={showMenu} />
+        <div>
+          <Outlet />
         </div>
       </div>
-    );
+    </div>
+  );
   // } else {
   //   return (
   //     <div className="flex items-center justify-center flex-col gap-5 w-full h-screen">
