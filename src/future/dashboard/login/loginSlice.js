@@ -18,6 +18,7 @@ const initialState = {
     : null,
   otp: null,
   role: null,
+  isLogin: false,
   status: "idle",
   error: null,
 };
@@ -42,14 +43,25 @@ const loginSlice = createSlice({
         toast.warning("کد شما هنوز منقضی نشده است !");
       })
       .addCase(checkCode.fulfilled, (state, action) => {
-        state.accessToken = action.payload.data.accessToken;
-        state.role = action.payload.data.user.role;
-        localStorage.setItem("accessToken", state.accessToken);
+        if(action.payload.data.user.role === "ADMIN"){
+          state.status = "success";
+          state.accessToken = action.payload.data.accessToken;
+          state.role = action.payload.data.user.role;
+          state.isLogin = true
+          localStorage.setItem("accessToken", state.accessToken);
+        }else{
+          state.status = "failed";
+          state.role = action.payload.data.user.role;
+        }
       })
       .addCase(checkCode.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error;
-        toast.error("کد ارسالی صحیح نمیباشد !");
+        if(state.otp !== action.payload.data.code){
+          toast.error("کد ارسالی صحیح نمیباشد !");
+        }else{
+          toast.error("خطایی در سرور رخ داده است !")
+        }
       });
   },
 });

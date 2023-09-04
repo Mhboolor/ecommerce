@@ -6,11 +6,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { authUser, checkCode } from "../../future/dashboard/login/loginSlice";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useEffect, useState } from "react";
 
 function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { otp, role } = useSelector((state) => state.login);
+  const { otp, role , status } = useSelector((state) => state.login);
 
   const {
     register,
@@ -25,6 +26,18 @@ function Login() {
   const checkOtp = (data) => {
     dispatch(checkCode(data));
   };
+
+
+  useEffect(() => {
+    if(status === "success" && role === "ADMIN"){
+      toast("خوش آمدید")
+      navigate("/dashboard")
+    }
+    if(status === "failed" && role === "USER"){
+      toast.error("شما مجاز به ورود نمیباشید !")
+    }
+  } , [role , status , navigate])
+
 
   return (
     <div className="flex items-center justify-center w-full h-screen bg-white">
