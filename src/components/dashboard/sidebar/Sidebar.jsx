@@ -6,26 +6,11 @@ import { Link } from "react-router-dom";
 function Sidebar({ showMenu }) {
   const [menu, setMenu] = useState([
     {
-      title: "پیشخوان",
-      link: "",
+      title: "مدیریت مخاطبین",
+      link: "manage-contact",
       id: 1,
       isActive: false,
-      subMenu: [
-        { title: "مدیریت منو", link: "/manage-menu" },
-        { title: "مدیریت تخفیف ها", link: "/manage-off" },
-        { title: "مدیریت منو", link: "/menu" },
-      ],
-    },
-    {
-      title: "wtf",
-      link: "",
-      id: 2,
-      isActive: false,
-      subMenu: [
-        { title: "مدیریت منو", link: "/manage-menu" },
-        { title: "مدیریت تخفیف ها", link: "/manage-off" },
-        { title: "مدیریت منو", link: "/menu" },
-      ],
+      subMenu: [],
     },
   ]);
 
@@ -43,7 +28,7 @@ function Sidebar({ showMenu }) {
 
   return (
     <aside
-      className={`bg-[#fff] border-l w-full max-w-xs p-5 flex flex-col gap-3 h-screen overflow-y-auto duration-150 translate-x-96 md:translate-x-0 ${showMenu && "translate-x-0"}`}
+      className={`bg-[#fff] border-l w-full max-w-[280px] p-5 flex-col gap-3 h-screen overflow-y-auto duration-150 absolute top-0 md:static md:top-auto md:right-auto ${showMenu ? "right-0" : "-right-96"}`}
     >
       <p>داشبورد</p>
       <ul className="text-sm text-[#5e6278]">
@@ -61,11 +46,8 @@ function Sidebar({ showMenu }) {
                     <BsDot className="text-xl" />
                     {item.title}
                   </div>
-                  {item.subMenu && item.isActive ? (
-                    <MdArrowDropUp />
-                  ) : (
-                    <MdArrowDropDown />
-                  )}
+                  {item.subMenu.length > 0 &&
+                    (item.isActive ? <MdArrowDropUp /> : <MdArrowDropDown />)}
                 </Link>
                 {item.subMenu && (
                   <ul

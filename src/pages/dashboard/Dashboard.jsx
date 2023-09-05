@@ -16,10 +16,10 @@ function Dashboard() {
   return (
     <div className="flex flex-col bg-[#fff]">
       <Header ShowMenuHandler={ShowMenuHandler} showMenu={showMenu} />
-      <div className="flex">
+      <div className="flex relative">
         <Sidebar showMenu={showMenu} />
-        <div>
-          <Outlet />
+        <div className="p-5 flex flex-col flex-1 w-full">
+          <Outlet/>
         </div>
       </div>
     </div>

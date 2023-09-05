@@ -12,9 +12,10 @@ import Dashboard from "../pages/dashboard/Dashboard";
 
 // Dashboard Admin Router Path
 import DashboardAdmin from "../pages/dashboard/Login";
+import DashboardHome from "../components/dashboard/home/Home";
+import Contacts from "../components/dashboard/contacts/Contacts";
 
 export const router = createBrowserRouter([
-  
   // Shop Path
   {
     path: "/",
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <Dashboard />,
+    children: [
+      { path: "", element: <DashboardHome /> },
+      { path: "manage-contact", element: <Contacts /> },
+    ],
   },
   {
     path: "dashboard/login",
