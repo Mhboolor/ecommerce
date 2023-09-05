@@ -8,7 +8,7 @@ module.exports = {
       backgroundColor : {
         "light" : "#eff0f2",
         "success" : "#17C176",
-        "menu-hover" : "#f1faff"
+        "menu-hover" : "#f1faff",
       },
       colors : {
         "gray" : {
@@ -24,6 +24,7 @@ module.exports = {
         },
         "gray-link" : "#007185",
         "menu-hover" : "#0095e8",
+        "btn-blue" : "rgb(67, 97, 238)"
       },
       fontFamily : {
         "yekan" : "yekan"
