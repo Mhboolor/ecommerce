@@ -1,5 +1,4 @@
 import { AiOutlineUser } from "react-icons/ai";
-import { CiGrid41, CiGrid2H } from "react-icons/ci";
 import { MdSearch } from "react-icons/md";
 
 function Header({ title, icon, placeholder }) {
@@ -9,13 +8,7 @@ function Header({ title, icon, placeholder }) {
       <div className="flex items-center justify-between w-full flex-1 sm:justify-end gap-3 text-base sm:text-lg relative">
         <button className="flex items-center justify-center gap-1 text-white bg-btn-blue py-1 px-5 rounded-md hover:shadow-xl duration-150">
           <AiOutlineUser className="text-2xl" />
-          اضافه کردن
-        </button>
-        <button className="border rounded-md p-1 border-btn-blue text-btn-blue hover:bg-btn-blue hover:text-white hover:shadow-xl duration-150">
-          <CiGrid2H className="text-2xl" />
-        </button>
-        <button className="border rounded-md p-1 border-btn-blue text-btn-blue hover:bg-btn-blue hover:text-white hover:shadow-xl duration-150">
-          <CiGrid41 className="text-2xl" />
+          اضافه کردن مخاطب
         </button>
         <div className="flex items-center">
           <label

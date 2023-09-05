@@ -23,8 +23,10 @@ module.exports = {
           9 : "#383838",
         },
         "gray-link" : "#007185",
+        "success" : "#17C176",
         "menu-hover" : "#0095e8",
-        "btn-blue" : "rgb(67, 97, 238)"
+        "btn-blue" : "rgb(67, 97, 238)",
+        "btn-red" : "rgb(231, 81 ,90)"
       },
       fontFamily : {
         "yekan" : "yekan"

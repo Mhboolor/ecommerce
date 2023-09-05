@@ -28,7 +28,7 @@ function Sidebar({ showMenu }) {
 
   return (
     <aside
-      className={`bg-[#fff] z-50 border-l w-full max-w-[280px] p-5 flex-col gap-3 h-screen overflow-y-auto duration-150 absolute top-0 md:static md:top-auto md:right-auto ${
+      className={`bg-[#fff] z-40 border-l w-full max-w-[280px] p-5 flex-col gap-3 h-screen overflow-y-auto duration-150 absolute top-0 lg:static lg:top-auto lg:right-auto ${
         showMenu ? "right-0" : "-right-96"
       }`}
     >
