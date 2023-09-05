@@ -28,7 +28,9 @@ function Sidebar({ showMenu }) {
 
   return (
     <aside
-      className={`bg-[#fff] border-l w-full max-w-[280px] p-5 flex-col gap-3 h-screen overflow-y-auto duration-150 absolute top-0 md:static md:top-auto md:right-auto ${showMenu ? "right-0" : "-right-96"}`}
+      className={`bg-[#fff] z-50 border-l w-full max-w-[280px] p-5 flex-col gap-3 h-screen overflow-y-auto duration-150 absolute top-0 md:static md:top-auto md:right-auto ${
+        showMenu ? "right-0" : "-right-96"
+      }`}
     >
       <p>داشبورد</p>
       <ul className="text-sm text-[#5e6278]">
