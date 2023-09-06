@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { checkOtp, getOtp } from "../../../services/api";
+import { checkOtp, getMe, getOtp } from "../../../services/api";
 import { toast } from "react-toastify";
 
 export const authUser = createAsyncThunk("login/authUser", async (mobile) => {
@@ -12,11 +12,19 @@ export const checkCode = createAsyncThunk("login/checkCode", async (data) => {
   return response;
 });
 
+export const getUser = createAsyncThunk("login/getMe", async () => {
+  const response = await getMe();
+  return response;
+});
+
 const initialState = {
-  accessToken: localStorage.getItem("accessToke")
-    ? localStorage.getItem("accessToke")
+  accessToken: localStorage.getItem("accessToken")
+    ? localStorage.getItem("accessToken")
     : null,
   otp: null,
+  userInfo: localStorage.getItem("userInfo")
+    ? localStorage.getItem("userInfo")
+    : null,
   role: null,
   isLogin: false,
   status: "idle",
@@ -29,8 +37,10 @@ const loginSlice = createSlice({
   reducers: {
     logOut: (state, action) => {
       state.accessToken = null;
+      state.userInfo = null;
       state.otp = null;
-      localStorage.removeItem("accessToke");
+      localStorage.removeItem("accessToken");
+      localStorage.removeItem("userInfo");
     },
   },
   extraReducers: (builder) => {
@@ -54,7 +64,7 @@ const loginSlice = createSlice({
           state.accessToken = action.payload.data.accessToken;
           state.role = action.payload.data.user.role;
           state.isLogin = true;
-          localStorage.setItem("accessToke", state.accessToken);
+          localStorage.setItem("accessToken", state.accessToken);
         } else {
           state.status = "failed";
           state.role = action.payload.data.user.role;
@@ -68,6 +78,10 @@ const loginSlice = createSlice({
         } else {
           toast.error("خطایی در سرور رخ داده است !");
         }
+      })
+      .addCase(getUser.fulfilled, (state, action) => {
+        state.userInfo = action.payload.data.user;
+        localStorage.setItem("userInfo", state.userInfo);
       });
   },
 });

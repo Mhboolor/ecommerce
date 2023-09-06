@@ -4,14 +4,16 @@ import { TbNumbers } from "react-icons/tb";
 
 import { useDispatch, useSelector } from "react-redux";
 import { authUser, checkCode } from "../../future/dashboard/login/loginSlice";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
 
 function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { otp, role , status , accessToken } = useSelector((state) => state.login);
+  const { otp, role, status, accessToken } = useSelector(
+    (state) => state.login
+  );
 
   const {
     register,
@@ -27,19 +29,47 @@ function Login() {
     dispatch(checkCode(data));
   };
 
-
   useEffect(() => {
-    if(status === "success" && role === "ADMIN" && accessToken !== "" && accessToken ){
-      toast("خوش آمدید")
-      navigate("/dashboard")
+    if (
+      status === "success" &&
+      role === "ADMIN" &&
+      accessToken !== "" &&
+      accessToken
+    ) {
+      toast("خوش آمدید");
+      navigate("/dashboard");
     }
-    if(status === "failed" && role === "USER"){
-      toast.error("شما مجاز به ورود نمیباشید !")
+    if (status === "failed" && role === "USER") {
+      toast.error("شما مجاز به ورود نمیباشید !");
     }
-  } , [role , status , navigate])
+  }, [role, status, navigate, accessToken]);
 
-
-  return (
+  return localStorage.getItem("accessToken") ? (
+    <div className="flex items-center justify-center w-full h-screen bg-white">
+      <div className="absolute left-0 top-0 h-full">
+        <img
+          src="../images/dashboard/login/wave.png"
+          alt=""
+          className="w-full h-full"
+        />
+      </div>
+      <div className="flex items-center justify-center z-10 container m-auto gap-40 px-20 sm:px-52">
+        <div className="flex flex-col flex-1 gap-5 text-center">
+          <p className="text-xl">شما وارد شده اید</p>
+          <Link to={"/dashboard"} className="bg-success rounded-md text-white">
+            صفحه اصلی
+          </Link>
+        </div>
+        <div className="items-center justify-center w-full h-full flex-1 hidden lg:flex">
+          <img
+            src="../images/dashboard/login/bg.svg"
+            alt=""
+            className="w-full h-full"
+          />
+        </div>
+      </div>
+    </div>
+  ) : (
     <div className="flex items-center justify-center w-full h-screen bg-white">
       <div className="absolute left-0 top-0 h-full">
         <img
@@ -103,6 +133,7 @@ function Login() {
                         message: "کد فرستاده شده اجباری میباشد !",
                       },
                     })}
+                    type="number"
                     id="phone"
                     placeholder="کد ارسال شده را وارد کنید ..."
                     className="w-full outline-none bg-transparent peer group border-b p-2 focus:border-b-green-500 placeholder:text-black placeholder:md:text-slate-400"

@@ -1,11 +1,14 @@
 import { MdSearch } from "react-icons/md";
 
-function HeaderBox({ title, icon, placeholder , button}) {
+function HeaderBox({ title, icon, placeholder, button, ShowBoxHandler }) {
   return (
     <div className="flex items-center justify-between text-lg flex-col gap-4 sm:flex-row">
       <div className="text-xl sm:text-2xl">{title}</div>
       <div className="flex items-center justify-between w-full flex-1 sm:justify-end gap-3 text-base sm:text-lg relative">
-        <button className="flex items-center justify-center gap-1 text-white bg-btn-blue py-1 px-5 rounded-md hover:shadow-xl duration-150">
+        <button
+          className="flex items-center justify-center gap-1 text-white bg-btn-blue py-1 px-5 rounded-md hover:shadow-xl duration-150"
+          onClick={ShowBoxHandler}
+        >
           {icon}
           {button}
         </button>

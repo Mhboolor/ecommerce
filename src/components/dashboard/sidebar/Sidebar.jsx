@@ -44,28 +44,28 @@ function Sidebar({ showMenu }) {
     {
       title: "مدیریت تیکت ها",
       link: "manage-contact",
-      id: 4,
+      id: 5,
       isActive: false,
       subMenu: [],
     },
     {
       title: "مدیریت کامنت ها",
       link: "manage-contact",
-      id: 5,
+      id: 6,
       isActive: false,
       subMenu: [],
     },
     {
       title: "مدیریت دسترسی ها",
       link: "manage-contact",
-      id: 6,
+      id: 7,
       isActive: false,
       subMenu: [],
     },
     {
       title: "مدیریت نقش ها",
       link: "manage-contact",
-      id: 7,
+      id: 8,
       isActive: false,
       subMenu: [],
     },
@@ -94,6 +94,7 @@ function Sidebar({ showMenu }) {
         {menu
           ? menu.map((item) => (
               <li
+                key={item.id}
                 className="flex items-center justify-between flex-col relative"
                 onClick={() => dropHandler(item.id)}
               >
@@ -114,8 +115,8 @@ function Sidebar({ showMenu }) {
                       item.isActive ? "flex" : "hidden"
                     }`}
                   >
-                    {item.subMenu.map((sub) => (
-                      <li>
+                    {item.subMenu.map((sub , index) => (
+                      <li key={index}>
                         <Link
                           to={sub.link}
                           className="w-full flex items-center gap-1 px-4 py-3 rounded-lg duration-150 hover:bg-menu-hover hover:text-menu-hover"

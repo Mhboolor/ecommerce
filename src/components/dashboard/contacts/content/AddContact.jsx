@@ -1,19 +1,32 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useAddContactMutation } from "../../../../future/dashboard/contacts/contactSlice";
 
-function AddContact() {
+function AddContact({ ShowBoxHandler, showAddBox }) {
+  const [addContact] = useAddContactMutation();
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
-  const onSubmit = () => {
-    console.log("hi");
+  const onSubmit = (data) => {
+    addContact(data);
+    ShowBoxHandler();
+    reset();
   };
 
   return (
-    <div className="h-screen w-screen fixed left-0 top-0 z-50 flex items-center justify-center">
-        <div className="w-full h-full bg-black/10 absolute left-0 top-0"></div>
+    <div
+      className={`h-screen w-screen fixed left-0 top-0 z-50 items-center justify-center ${
+        showAddBox ? "flex" : "hidden"
+      }`}
+    >
+      <div
+        className="w-full h-full bg-black/10 absolute left-0 top-0"
+        onClick={ShowBoxHandler}
+      ></div>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-5 w-full max-w-xs bg-[#fff] p-5 shadow-md rounded border z-50"
@@ -95,7 +108,10 @@ function AddContact() {
           <button className="py-1 px-3 text-success border-success border rounded hover:text-white hover:bg-success duration-150">
             تایید
           </button>
-          <button className="py-1 px-3 text-btn-red border-btn-red border rounded hover:text-white hover:bg-btn-red duration-150">
+          <button
+            className="py-1 px-3 text-btn-red border-btn-red border rounded hover:text-white hover:bg-btn-red duration-150"
+            onClick={ShowBoxHandler}
+          >
             انصراف
           </button>
         </div>
