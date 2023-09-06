@@ -29,6 +29,7 @@ const loginSlice = createSlice({
   reducers: {
     logOut: (state, action) => {
       state.accessToken = null;
+      state.otp = null;
       localStorage.removeItem("accessToke");
     },
   },

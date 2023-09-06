@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useGetAllContactsQuery } from "../../../../future/dashboard/contacts/contactSlice";
 import Loading from "../../Loading";
+import axios from "axios";
 
 function ContactList() {
-  const {
-    data: allContacts,
-    isError,
-    isLoading,
-    isSuccess,
-  } = useGetAllContactsQuery();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await axios.get("http://127.0.0.1:1111/contact/list")
+      console.log(res.data);
+    }
+
+    fetchData()
+  } , [])
+
+  // const {
+  //   data: allContacts,
+  //   isError,
+  //   isLoading,
+  //   isSuccess,
+  // } = useGetAllContactsQuery();
 
   return (
     <div className="w-full overflow-x-auto">

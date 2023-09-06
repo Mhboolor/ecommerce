@@ -12,6 +12,63 @@ function Sidebar({ showMenu }) {
       isActive: false,
       subMenu: [],
     },
+    {
+      title: "مدیریت محصولات",
+      link: "manage-contact",
+      id: 2,
+      isActive: false,
+      subMenu: [
+        { title: "لیست محصولات", link: "" },
+        { title: "محصولات مورد علاقه", link: "" },
+        { title: "محصولات ذخیره شده", link: "" },
+      ],
+    },
+    {
+      title: "مدیریت بلاگ ها",
+      link: "manage-contact",
+      id: 3,
+      isActive: false,
+      subMenu: [
+        { title: "لیست بلاگ ها", link: "" },
+        { title: "بلاگ های مورد علاقه", link: "" },
+        { title: "بلاگ های ذخیره شده", link: "" },
+      ],
+    },
+    {
+      title: "مدیریت دسته بندی ها",
+      link: "manage-contact",
+      id: 4,
+      isActive: false,
+      subMenu: [],
+    },
+    {
+      title: "مدیریت تیکت ها",
+      link: "manage-contact",
+      id: 4,
+      isActive: false,
+      subMenu: [],
+    },
+    {
+      title: "مدیریت کامنت ها",
+      link: "manage-contact",
+      id: 5,
+      isActive: false,
+      subMenu: [],
+    },
+    {
+      title: "مدیریت دسترسی ها",
+      link: "manage-contact",
+      id: 6,
+      isActive: false,
+      subMenu: [],
+    },
+    {
+      title: "مدیریت نقش ها",
+      link: "manage-contact",
+      id: 7,
+      isActive: false,
+      subMenu: [],
+    },
   ]);
 
   const dropHandler = (id) => {
@@ -28,7 +85,7 @@ function Sidebar({ showMenu }) {
 
   return (
     <aside
-      className={`bg-[#fff] z-40 border-l w-full max-w-[280px] p-5 flex-col gap-3 h-screen overflow-y-auto duration-150 absolute top-0 lg:static lg:top-auto lg:right-auto ${
+      className={`bg-[#fff] z-40 border-l w-full max-w-xs md:w-72 p-5 flex-col gap-3 h-screen overflow-y-auto duration-150 absolute top-0 lg:static lg:top-auto lg:right-auto ${
         showMenu ? "right-0" : "-right-96"
       }`}
     >

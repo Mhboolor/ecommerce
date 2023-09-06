@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { otp, role , status } = useSelector((state) => state.login);
+  const { otp, role , status , accessToken } = useSelector((state) => state.login);
 
   const {
     register,
@@ -29,7 +29,7 @@ function Login() {
 
 
   useEffect(() => {
-    if(status === "success" && role === "ADMIN"){
+    if(status === "success" && role === "ADMIN" && accessToken !== "" && accessToken ){
       toast("خوش آمدید")
       navigate("/dashboard")
     }
