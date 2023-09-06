@@ -25,7 +25,10 @@ function AddContact({ ShowBoxHandler, showAddBox }) {
     >
       <div
         className="w-full h-full bg-black/10 absolute left-0 top-0"
-        onClick={ShowBoxHandler}
+        onClick={() => {
+          ShowBoxHandler();
+          reset();
+        }}
       ></div>
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -110,7 +113,11 @@ function AddContact({ ShowBoxHandler, showAddBox }) {
           </button>
           <button
             className="py-1 px-3 text-btn-red border-btn-red border rounded hover:text-white hover:bg-btn-red duration-150"
-            onClick={ShowBoxHandler}
+            onClick={() => {
+              ShowBoxHandler();
+              reset();
+            }}
+            type="button"
           >
             انصراف
           </button>

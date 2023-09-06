@@ -1,4 +1,9 @@
 import { apiSlice } from "../../../api/apiSlice";
+import { createEntityAdapter  } from "@reduxjs/toolkit"
+
+const contactAdapter = createEntityAdapter();
+
+const initialState = contactAdapter.getInitialState();
 
 const contactApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
