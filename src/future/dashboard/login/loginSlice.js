@@ -13,8 +13,8 @@ export const checkCode = createAsyncThunk("login/checkCode", async (data) => {
 });
 
 const initialState = {
-  accessToken: localStorage.getItem("accessToken")
-    ? localStorage.getItem("accessToken")
+  accessToken: localStorage.getItem("accessToke")
+    ? localStorage.getItem("accessToke")
     : null,
   otp: null,
   role: null,
@@ -26,7 +26,12 @@ const initialState = {
 const loginSlice = createSlice({
   name: "login",
   initialState,
-  reducers: {},
+  reducers: {
+    logOut: (state, action) => {
+      state.accessToken = null;
+      localStorage.removeItem("accessToke");
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(authUser.pending, (state, action) => {
@@ -43,13 +48,13 @@ const loginSlice = createSlice({
         toast.warning("کد شما هنوز منقضی نشده است !");
       })
       .addCase(checkCode.fulfilled, (state, action) => {
-        if(action.payload.data.user.role === "ADMIN"){
+        if (action.payload.data.user.role === "ADMIN") {
           state.status = "success";
           state.accessToken = action.payload.data.accessToken;
           state.role = action.payload.data.user.role;
-          state.isLogin = true
-          localStorage.setItem("accessToken", state.accessToken);
-        }else{
+          state.isLogin = true;
+          localStorage.setItem("accessToke", state.accessToken);
+        } else {
           state.status = "failed";
           state.role = action.payload.data.user.role;
         }
@@ -57,14 +62,14 @@ const loginSlice = createSlice({
       .addCase(checkCode.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error;
-        if(state.otp !== action.payload.data.code){
+        if (state.otp !== action.payload.data.code) {
           toast.error("کد ارسالی صحیح نمیباشد !");
-        }else{
-          toast.error("خطایی در سرور رخ داده است !")
+        } else {
+          toast.error("خطایی در سرور رخ داده است !");
         }
       });
   },
 });
 
-export const {} = loginSlice.actions;
+export const { logOut } = loginSlice.actions;
 export default loginSlice.reducer;
