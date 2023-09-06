@@ -1,9 +1,13 @@
 import React from "react";
+import { useGetAllContactsQuery } from "../../../../future/dashboard/contacts/contactSlice";
 
 function ContactList() {
-
-  const 
-
+  const {
+    data: allContacts,
+    isError,
+    isLoading,
+    isSuccess,
+  } = useGetAllContactsQuery();
 
   return (
     <div className="w-full overflow-x-auto">
@@ -17,9 +21,7 @@ function ContactList() {
             <td className="text-center py-2 px-4">عملیات</td>
           </tr>
         </thead>
-        <tbody>
-          
-        </tbody>
+        <tbody></tbody>
       </table>
     </div>
   );
