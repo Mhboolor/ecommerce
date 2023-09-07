@@ -36,7 +36,7 @@ function Sidebar({ showMenu }) {
     },
     {
       title: "مدیریت دسته بندی ها",
-      link: "manage-contact",
+      link: "manage-categories",
       id: 4,
       isActive: false,
       subMenu: [],

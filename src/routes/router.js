@@ -19,6 +19,7 @@ import BlogsList from "../components/dashboard/blogs/content/BlogsList";
 import UpdateBlog from "../components/dashboard/blogs/content/UpdateBlog";
 import BookBlogs from "../components/dashboard/blogs/content/BookBlogs";
 import FavBlogs from "../components/dashboard/blogs/content/FavBlogs";
+import Category from "../components/dashboard/category/Category";
 
 export const router = createBrowserRouter([
   // Shop Path
@@ -52,6 +53,7 @@ export const router = createBrowserRouter([
           { path: "update-blog", element: <UpdateBlog /> },
         ],
       },
+      { path: "manage-categories", element: <Category /> },
     ],
   },
   {

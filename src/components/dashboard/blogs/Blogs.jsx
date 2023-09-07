@@ -5,6 +5,7 @@ import GridBox from "../GridBox";
 import AddBlog from "./content/AddBlog";
 
 function Blogs() {
+  
   const [showAddBox, setShowAddBox] = useState(false);
 
   const ShowBoxHandler = () => {
@@ -21,7 +22,7 @@ function Blogs() {
         ShowBoxHandler={ShowBoxHandler}
       />
       <GridBox />
-      {!showAddBox && (
+      {showAddBox && (
         <AddBlog showAddBox={showAddBox} ShowBoxHandler={ShowBoxHandler} />
       )}
     </div>

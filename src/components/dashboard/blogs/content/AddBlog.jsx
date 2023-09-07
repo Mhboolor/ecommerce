@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-function AddBlog({ showAddBox, ShowBoxHandler }) {
+function AddBlog({ ShowBoxHandler }) {
   const {
     register,
     handleSubmit,
