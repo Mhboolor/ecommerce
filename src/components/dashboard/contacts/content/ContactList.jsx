@@ -1,12 +1,12 @@
-import {
-  useAllContactsQuery,
-} from "../../../../future/dashboard/contacts/contactSlice";
+import { useAllContactsQuery } from "../../../../future/dashboard/contacts/contactSlice";
 import Error from "../../Error";
 import Loading from "../../Loading";
 import Empty from "../../Empty";
 import Contact from "./Contact";
+import { useState } from "react";
 
-function ContactList() {
+function ContactList({ searchContact }) {
+  const [searchedContact, setSearchedContact] = useState([]);
 
   const {
     data: allContacts,
@@ -33,9 +33,13 @@ function ContactList() {
             </tr>
           </thead>
           <tbody>
-            {allContacts.map((contact) => (
-              <Contact key={contact._id} {...contact} />
-            ))}
+            {searchedContact.length > 0
+              ? searchContact.map((contact) => (
+                  <Contact key={contact._id} {...contact} />
+                ))
+              : allContacts.map((contact) => (
+                  <Contact key={contact._id} {...contact} />
+                ))}
           </tbody>
         </table>
       ) : (

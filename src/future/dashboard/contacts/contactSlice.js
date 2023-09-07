@@ -1,7 +1,9 @@
 import { apiSlice } from "../../../api/apiSlice";
-import { createEntityAdapter  } from "@reduxjs/toolkit"
+import { createEntityAdapter, createSelector } from "@reduxjs/toolkit";
 
-const contactAdapter = createEntityAdapter();
+const contactAdapter = createEntityAdapter({
+  selectId: (e) => e._id,
+});
 
 const initialState = contactAdapter.getInitialState();
 
@@ -13,6 +15,7 @@ const contactApi = apiSlice.injectEndpoints({
       }),
       transformResponse: (result) => {
         if (result.statusCode === 200) {
+          contactAdapter.setAll(initialState.entities, result.data.contacts);
           return result.data.contacts;
         }
       },
@@ -37,7 +40,9 @@ const contactApi = apiSlice.injectEndpoints({
         url: `/contact/remove/${contactId}`,
         method: "DELETE",
       }),
-      invalidatesTags: [{ type: "Contact", id: "LIST" }],
+      invalidatesTags: (result, error, arg) => [
+        { type: "Contact", id: arg.id },
+      ],
     }),
   }),
 });
@@ -47,3 +52,14 @@ export const {
   useAddContactMutation,
   useDeleteContactMutation,
 } = contactApi;
+
+export const selectContactsResult = contactApi.endpoints.AllContacts.select();
+
+const selectContactsData = createSelector(
+  selectContactsResult,
+  (contactsResult) => contactsResult.data
+);
+
+export const { selectAll: selectAllContacts , selectById} = contactAdapter.getSelectors(
+  (state) => selectContactsData(state) ?? initialState
+);

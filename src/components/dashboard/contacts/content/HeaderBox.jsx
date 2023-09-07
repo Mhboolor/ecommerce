@@ -1,6 +1,14 @@
 import { MdSearch } from "react-icons/md";
 
-function HeaderBox({ title, icon, placeholder, button, ShowBoxHandler }) {
+function HeaderBox({
+  title,
+  icon,
+  placeholder,
+  button,
+  ShowBoxHandler,
+  inpValue,
+  inpFunc,
+}) {
   return (
     <div className="flex items-center justify-between text-lg flex-col gap-4 sm:flex-row">
       <div className="text-xl sm:text-2xl">{title}</div>
@@ -20,6 +28,8 @@ function HeaderBox({ title, icon, placeholder, button, ShowBoxHandler }) {
             <MdSearch />
           </label>
           <input
+            value={inpValue}
+            onChange={(e) => inpFunc(e.target.value)}
             id="search"
             type="text"
             className="outline-none rounded-md duration-200 p-2 text-sm absolute scale-0 left-0 top-0 w-0 focus-visible:w-full focus-visible:scale-100 focus-visible:border-btn-blue
