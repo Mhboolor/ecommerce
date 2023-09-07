@@ -14,6 +14,11 @@ import Dashboard from "../pages/dashboard/Dashboard";
 import DashboardAdmin from "../pages/dashboard/Login";
 import DashboardHome from "../components/dashboard/home/Home";
 import Contacts from "../components/dashboard/contacts/Contacts";
+import DashboardBlogs from "../components/dashboard/blogs/Blogs";
+import BlogsList from "../components/dashboard/blogs/content/BlogsList";
+import UpdateBlog from "../components/dashboard/blogs/content/UpdateBlog";
+import BookBlogs from "../components/dashboard/blogs/content/BookBlogs";
+import FavBlogs from "../components/dashboard/blogs/content/FavBlogs";
 
 export const router = createBrowserRouter([
   // Shop Path
@@ -37,6 +42,16 @@ export const router = createBrowserRouter([
     children: [
       { path: "", element: <DashboardHome /> },
       { path: "manage-contact", element: <Contacts /> },
+      {
+        path: "blogs",
+        element: <DashboardBlogs />,
+        children: [
+          { path: "", element: <BlogsList /> },
+          { path: "favorit-blogs", element: <FavBlogs /> },
+          { path: "book-blogs", element: <BookBlogs /> },
+          { path: "update-blog", element: <UpdateBlog /> },
+        ],
+      },
     ],
   },
   {

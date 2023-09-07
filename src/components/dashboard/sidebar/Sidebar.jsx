@@ -25,13 +25,13 @@ function Sidebar({ showMenu }) {
     },
     {
       title: "مدیریت بلاگ ها",
-      link: "manage-contact",
+      link: "blogs",
       id: 3,
       isActive: false,
       subMenu: [
-        { title: "لیست بلاگ ها", link: "" },
-        { title: "بلاگ های مورد علاقه", link: "" },
-        { title: "بلاگ های ذخیره شده", link: "" },
+        { title: "لیست بلاگ ها", link: "blogs" },
+        { title: "بلاگ های مورد علاقه", link: "blogs/favorit-blogs" },
+        { title: "بلاگ های ذخیره شده", link: "blogs/book-blogs" },
       ],
     },
     {
