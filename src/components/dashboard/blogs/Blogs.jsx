@@ -5,7 +5,11 @@ import GridBox from "../GridBox";
 import AddBlog from "./content/AddBlog";
 
 function Blogs() {
-  
+  const [showAddBox, setShowAddBox] = useState(false);
+
+  const ShowBoxHandler = () => {
+    setShowAddBox((prev) => !prev);
+  };
 
   return (
     <div className="flex flex-col gap-5">
@@ -14,9 +18,12 @@ function Blogs() {
         placeholder={"بلاگ"}
         icon={<MdOutlineStickyNote2 />}
         button={"اضافه کردن بلاگ"}
+        ShowBoxHandler={ShowBoxHandler}
       />
       <GridBox />
-      <AddBlog/>
+      {!showAddBox && (
+        <AddBlog showAddBox={showAddBox} ShowBoxHandler={ShowBoxHandler} />
+      )}
     </div>
   );
 }

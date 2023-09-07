@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-function AddBlog() {
+function AddBlog({ showAddBox, ShowBoxHandler }) {
   const {
     register,
     handleSubmit,
@@ -15,7 +15,13 @@ function AddBlog() {
     <div
       className={`h-screen w-screen fixed left-0 top-0 z-50 items-center justify-center flex`}
     >
-      <div className="w-full h-full bg-black/10 absolute left-0 top-0"></div>
+      <div
+        className="w-full h-full bg-black/10 absolute left-0 top-0"
+        onClick={() => {
+          ShowBoxHandler();
+          reset();
+        }}
+      ></div>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full max-w-3xl bg-[#fff] p-5 shadow-md rounded border z-50"
@@ -105,7 +111,7 @@ function AddBlog() {
         </div>
         <div className="flex flex-col gap-2">
           <input
-            {...register("title", {
+            {...register("category", {
               required: { value: true, message: "تایتل اجباری میباشد !" },
               maxLength: {
                 value: 20,
@@ -119,8 +125,8 @@ function AddBlog() {
             className="border rounded py-1.5 px-2 outline-none"
             placeholder=""
           />
-          {errors.name && (
-            <p className="text-xs text-btn-red">{errors.name.message}</p>
+          {errors.category && (
+            <p className="text-xs text-btn-red">{errors.category.message}</p>
           )}
         </div>
         <div className="flex flex-col gap-2">
@@ -130,7 +136,14 @@ function AddBlog() {
           <button className="py-1 px-3 text-success border-success border rounded hover:text-white hover:bg-success duration-150">
             اضافه
           </button>
-          <button className="py-1 px-3 text-btn-red border-btn-red border rounded hover:text-white hover:bg-btn-red duration-150">
+          <button
+            type="button"
+            className="py-1 px-3 text-btn-red border-btn-red border rounded hover:text-white hover:bg-btn-red duration-150"
+            onClick={() => {
+              ShowBoxHandler();
+              reset();
+            }}
+          >
             انصراف
           </button>
         </div>
