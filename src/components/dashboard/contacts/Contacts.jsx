@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ContactList from "./content/ContactList";
-import HeaderBox from "./content/HeaderBox";
+import HeaderBox from "../HeaderBox";
 import { AiOutlineUser } from "react-icons/ai";
 import AddContact from "./content/AddContact";
 
