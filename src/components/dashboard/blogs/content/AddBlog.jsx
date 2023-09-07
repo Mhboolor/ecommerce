@@ -43,7 +43,7 @@ function AddBlog({ showAddBox, ShowBoxHandler }) {
               },
             })}
             className="border rounded py-1.5 px-2 outline-none"
-            placeholder=""
+            placeholder="تایتل را وارد کنید ..."
           />
           {errors.title && (
             <p className="text-xs text-btn-red">{errors.title.message}</p>
@@ -55,15 +55,15 @@ function AddBlog({ showAddBox, ShowBoxHandler }) {
               required: { value: true, message: "متن اجباری میباشد !" },
               maxLength: {
                 value: 30,
-                message: "متن بیش از حد مجاز میباشد !",
+                message: "توضیحات بیش از حد مجاز میباشد !",
               },
               minLength: {
                 value: 5,
-                message: "متن کمتر از حد مجاز میباشد !",
+                message: "توضیحات کمتر از حد مجاز میباشد !",
               },
             })}
             className="border rounded py-1.5 px-2 outline-none"
-            placeholder=""
+            placeholder="توضیحات را وارد کنید"
           />
           {errors.text && (
             <p className="text-xs text-btn-red">{errors.text.message}</p>
@@ -83,7 +83,7 @@ function AddBlog({ showAddBox, ShowBoxHandler }) {
               },
             })}
             className="border rounded py-1.5 px-2 outline-none"
-            placeholder=""
+            placeholder="توضیح کوتاه را وارد کنید ..."
           />
           {errors.short_text && (
             <p className="text-xs text-btn-red">{errors.short_text.message}</p>
@@ -103,7 +103,7 @@ function AddBlog({ showAddBox, ShowBoxHandler }) {
               },
             })}
             className="border rounded py-1.5 px-2 outline-none"
-            placeholder=""
+            placeholder="تگ ها ..."
           />
           {errors.tags && (
             <p className="text-xs text-btn-red">{errors.tags.message}</p>
@@ -123,7 +123,7 @@ function AddBlog({ showAddBox, ShowBoxHandler }) {
               },
             })}
             className="border rounded py-1.5 px-2 outline-none"
-            placeholder=""
+            placeholder="دسته بندی ها ..."
           />
           {errors.category && (
             <p className="text-xs text-btn-red">{errors.category.message}</p>
