@@ -38,27 +38,61 @@
   background: #555;
 }
 
+/* Customize Inpute Type File */
+input[type="file"] {
+  color: transparent;
+}
+input[type="file"]::-webkit-file-upload-button {
+  visibility: hidden;
+}
+input[type="file"]::before {
+  content: "وارد کردن عکس";
+  color: black;
+  display: inline-block;
+  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 7px;
+  outline: none;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 10pt;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+input[type="file"]:hover::before {
+  border-color: black;
+}
+input[type="file"]:active {
+  outline: 0;
+}
+input[type="file"]:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
 
 /* Hero Slider Costum */
-.heroSlider .swiper-button-prev:after, .swiper-button-next:after {
-  font-size: 20px!important;
+.heroSlider .swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 20px !important;
 }
-.heroSlider .swiper-button-prev:after, .swiper-button-next:after {
+.heroSlider .swiper-button-prev:after,
+.swiper-button-next:after {
   color: black;
   font-weight: bolder;
 }
 
 /* Category Slider Costum */
-.categorySlider .swiper-button-prev:after{
-  font-size: 16px!important;
+.categorySlider .swiper-button-prev:after {
+  font-size: 16px !important;
   color: #000;
   font-weight: bolder;
   background: rgba(255, 255, 255, 0.7);
   border-radius: 50%;
   padding: 5px 8px;
 }
-.categorySlider .swiper-button-next:after{
-  font-size: 16px!important;
+.categorySlider .swiper-button-next:after {
+  font-size: 16px !important;
   color: #000;
   font-weight: bolder;
   background: rgba(255, 255, 255, 0.7);
@@ -67,16 +101,16 @@
 }
 
 /* Offer Slider Costum */
-.offer .swiper-button-prev:after{
-  font-size: 16px!important;
+.offer .swiper-button-prev:after {
+  font-size: 16px !important;
   color: #000;
   font-weight: bolder;
   background: rgba(255, 255, 255);
   border-radius: 50%;
   padding: 5px 8px;
 }
-.offer .swiper-button-next:after{
-  font-size: 16px!important;
+.offer .swiper-button-next:after {
+  font-size: 16px !important;
   color: #000;
   font-weight: bolder;
   background: rgba(255, 255, 255);
@@ -85,53 +119,53 @@
 }
 
 /* productsSlider Slider Costum */
-.productsSlider .swiper-button-prev:after{
-  font-size: 16px!important;
+.productsSlider .swiper-button-prev:after {
+  font-size: 16px !important;
   color: #000;
   font-weight: bolder;
   background: rgba(255, 255, 255);
   border-radius: 50%;
   padding: 5px 8px;
 }
-.productsSlider .swiper-button-next:after{
-  font-size: 16px!important;
+.productsSlider .swiper-button-next:after {
+  font-size: 16px !important;
   color: #000;
   font-weight: bolder;
   background: rgba(255, 255, 255);
   border-radius: 50%;
   padding: 5px 8px;
 }
-.productsSlider .swiper-button-prev{
+.productsSlider .swiper-button-prev {
   background-color: white;
   box-shadow: 1px 0 3px #c8c8c8;
-  right: 0!important;
+  right: 0 !important;
   border-radius: 5px 0 0 5px;
 }
-.productsSlider .swiper-button-next{
+.productsSlider .swiper-button-next {
   background-color: white;
   box-shadow: 1px 0 3px #c8c8c8;
-  left: 0!important;
+  left: 0 !important;
   border-radius: 0 5px 5px 0;
 }
 
 /* Product Image Slider  Costum*/
-.product-slider-image{
+.product-slider-image {
   width: 300px;
   height: 300px;
 }
-.product-slider-image .swiper-slide{
+.product-slider-image .swiper-slide {
   background-position: center;
   background-size: cover;
   width: 300px;
   height: 300px;
 }
 
-@media only screen and (max-width: 400px){
-  .product-slider-image{
+@media only screen and (max-width: 400px) {
+  .product-slider-image {
     width: 240px;
     height: 240px;
   }
-  .product-slider-image .swiper-slide{
+  .product-slider-image .swiper-slide {
     width: 240px;
     height: 240px;
   }

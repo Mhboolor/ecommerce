@@ -42,7 +42,7 @@ function AddContact({ ShowBoxHandler, showAddBox }) {
               minLength: { value: 3, message: "نام کمتر از حد مجاز میباشد !" },
             })}
             className="border rounded py-1.5 px-2 outline-none"
-            placeholder=""
+            placeholder="نام مخاطب را وارد کنید ..."
           />
           {errors.name && (
             <p className="text-xs text-btn-red">{errors.name.message}</p>
@@ -58,7 +58,7 @@ function AddContact({ ShowBoxHandler, showAddBox }) {
               },
             })}
             className="border rounded py-1.5 px-2 outline-none"
-            placeholder=""
+            placeholder="ایمیل مخاطب را وارد کنید ..."
           />
           {errors.email && (
             <p className="text-xs text-btn-red">{errors.email.message}</p>
@@ -78,7 +78,7 @@ function AddContact({ ShowBoxHandler, showAddBox }) {
               },
             })}
             className="border rounded py-1.5 px-2 outline-none"
-            placeholder=""
+            placeholder="شماره مخاطب را وارد کنید ..."
           />
           {errors.phone && (
             <p className="text-xs text-btn-red">{errors.phone.message}</p>
@@ -101,7 +101,7 @@ function AddContact({ ShowBoxHandler, showAddBox }) {
               },
             })}
             className="border rounded py-1.5 px-2 outline-none"
-            placeholder=""
+            placeholder="توضیحات را وارد کنید ..."
           />
           {errors.body && (
             <p className="text-xs text-btn-red">{errors.body.message}</p>

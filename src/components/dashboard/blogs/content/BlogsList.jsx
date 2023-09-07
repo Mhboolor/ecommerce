@@ -2,7 +2,9 @@ import React from 'react'
 
 function BlogsList() {
   return (
-    <div>BlogsList</div>
+    <div>
+      
+    </div>
   )
 }
 
