@@ -20,6 +20,7 @@ import UpdateBlog from "../components/dashboard/blogs/content/UpdateBlog";
 import BookBlogs from "../components/dashboard/blogs/content/BookBlogs";
 import FavBlogs from "../components/dashboard/blogs/content/FavBlogs";
 import Category from "../components/dashboard/category/Category";
+import Comments from "../components/dashboard/comment/Comments";
 
 export const router = createBrowserRouter([
   // Shop Path
@@ -54,6 +55,7 @@ export const router = createBrowserRouter([
         ],
       },
       { path: "manage-categories", element: <Category /> },
+      { path: "manage-comments", element: <Comments /> },
     ],
   },
   {

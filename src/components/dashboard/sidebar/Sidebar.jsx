@@ -14,7 +14,7 @@ function Sidebar({ showMenu }) {
     },
     {
       title: "مدیریت محصولات",
-      link: "manage-contact",
+      link: "manage-products",
       id: 2,
       isActive: false,
       subMenu: [
@@ -43,28 +43,28 @@ function Sidebar({ showMenu }) {
     },
     {
       title: "مدیریت تیکت ها",
-      link: "manage-contact",
+      link: "manage-tikets",
       id: 5,
       isActive: false,
       subMenu: [],
     },
     {
       title: "مدیریت کامنت ها",
-      link: "manage-contact",
+      link: "manage-comments",
       id: 6,
       isActive: false,
       subMenu: [],
     },
     {
       title: "مدیریت دسترسی ها",
-      link: "manage-contact",
+      link: "manage-permissions",
       id: 7,
       isActive: false,
       subMenu: [],
     },
     {
       title: "مدیریت نقش ها",
-      link: "manage-contact",
+      link: "manage-roles",
       id: 8,
       isActive: false,
       subMenu: [],
@@ -115,7 +115,7 @@ function Sidebar({ showMenu }) {
                       item.isActive ? "flex" : "hidden"
                     }`}
                   >
-                    {item.subMenu.map((sub , index) => (
+                    {item.subMenu.map((sub, index) => (
                       <li key={index}>
                         <Link
                           to={sub.link}

@@ -1,9 +1,7 @@
+import React from "react";
 import { useForm } from "react-hook-form";
-import { useAddCategoryMutation } from "../../../../future/dashboard/category/categorySlice";
 
-function AddCategory({ ShowBoxHandler }) {
-  const [addCategory] = useAddCategoryMutation();
-
+function AddComment({ ShowBoxHandler }) {
   const {
     register,
     handleSubmit,
@@ -14,11 +12,9 @@ function AddCategory({ ShowBoxHandler }) {
   const onSubmit = (data) => {
     const formData = new FormData();
 
-    formData.append("title", data.title);
     formData.append("images", data.file[0]);
+    formData.append("title", data.title);
     formData.append("parent", data.parent);
-
-    addCategory(formData);
   };
 
   return (
@@ -37,11 +33,11 @@ function AddCategory({ ShowBoxHandler }) {
         className="flex flex-col gap-5 w-full max-w-sm bg-[#fff] p-5 shadow-md rounded border z-50"
       >
         <div className="flex items-center justify-center text-center">
-          <p>اضافه کردن دسته بندی</p>
+          <p>اضافه کردن کامنت</p>
         </div>
         <div className="flex flex-col gap-2">
           <input
-            {...register("title", {
+            {...register("comment", {
               required: { value: true, message: "نام دسته اجباری میباشد !" },
               maxLength: {
                 value: 20,
@@ -55,30 +51,48 @@ function AddCategory({ ShowBoxHandler }) {
             className="border rounded py-1.5 px-2 outline-none"
             placeholder="نام دسته بندی را وارد کنید ..."
           />
-          {errors.title && (
-            <p className="text-xs text-btn-red">{errors.title.message}</p>
+          {errors.comment && (
+            <p className="text-xs text-btn-red">{errors.comment.message}</p>
           )}
         </div>
         <div className="flex flex-col gap-2">
           <input
-            {...register("parent")}
-            className="border rounded py-1.5 px-2 outline-none"
-            placeholder="شناسه والد را وارد کنید یا خالی بگذارید ..."
-          />
-          {errors.parent && (
-            <p className="text-xs text-btn-red">{errors.parent.message}</p>
-          )}
-        </div>
-        <div className="flex flex-col gap-2">
-          <input
-            {...register("file", {
-              required: { value: true, message: "عکس اجباری میباشد" },
+            {...register("blogName", {
+              required: { value: true, message: "نام دسته اجباری میباشد !" },
+              maxLength: {
+                value: 20,
+                message: "نام دسته بندی بیش از حد مجاز میباشد !",
+              },
+              minLength: {
+                value: 3,
+                message: "نام دسته بندی کمتر از حد مجاز میباشد !",
+              },
             })}
-            type="file"
-            accept="image/*"
+            className="border rounded py-1.5 px-2 outline-none"
+            placeholder="نام دسته بندی را وارد کنید ..."
           />
-          {errors.file && (
-            <p className="text-xs text-btn-red">{errors.file.message}</p>
+          {errors.blogName && (
+            <p className="text-xs text-btn-red">{errors.blogName.message}</p>
+          )}
+        </div>
+        <div className="flex flex-col gap-2">
+          <input
+            {...register("productName", {
+              required: { value: true, message: "نام دسته اجباری میباشد !" },
+              maxLength: {
+                value: 20,
+                message: "نام دسته بندی بیش از حد مجاز میباشد !",
+              },
+              minLength: {
+                value: 3,
+                message: "نام دسته بندی کمتر از حد مجاز میباشد !",
+              },
+            })}
+            className="border rounded py-1.5 px-2 outline-none"
+            placeholder="نام دسته بندی را وارد کنید ..."
+          />
+          {errors.productName && (
+            <p className="text-xs text-btn-red">{errors.productName.message}</p>
           )}
         </div>
         <div className="flex items-center justify-center gap-5">
@@ -101,4 +115,4 @@ function AddCategory({ ShowBoxHandler }) {
   );
 }
 
-export default AddCategory;
+export default AddComment;
