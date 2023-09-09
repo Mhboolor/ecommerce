@@ -1,9 +1,8 @@
 import { useForm } from "react-hook-form";
-import { useAddCategoryMutation } from "../../../../future/dashboard/category/categorySlice";
+import { toast } from "react-toastify";
+import { addCategory } from "../../../../services/api";
 
 function AddCategory({ ShowBoxHandler }) {
-  const [addCategory] = useAddCategoryMutation();
-
   const {
     register,
     handleSubmit,
@@ -15,10 +14,18 @@ function AddCategory({ ShowBoxHandler }) {
     const formData = new FormData();
 
     formData.append("title", data.title);
-    formData.append("images", data.file[0]);
-    formData.append("parent", data.parent);
+    formData.append("images", data.images[0]);
+    data.parent !== "" && formData.append("parent", data.parent);
 
-    addCategory(formData);
+    addCategory(formData).then((res) => {
+      if (res.status !== 201) {
+        toast.warn(res.data.errors.message);
+      } else {
+        toast.success(res.data.data.message);
+        reset();
+        ShowBoxHandler();
+      }
+    });
   };
 
   return (
@@ -71,14 +78,14 @@ function AddCategory({ ShowBoxHandler }) {
         </div>
         <div className="flex flex-col gap-2">
           <input
-            {...register("file", {
+            {...register("images", {
               required: { value: true, message: "عکس اجباری میباشد" },
             })}
             type="file"
             accept="image/*"
           />
-          {errors.file && (
-            <p className="text-xs text-btn-red">{errors.file.message}</p>
+          {errors.images && (
+            <p className="text-xs text-btn-red">{errors.images.message}</p>
           )}
         </div>
         <div className="flex items-center justify-center gap-5">

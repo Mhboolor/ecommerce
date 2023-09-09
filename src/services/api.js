@@ -1,6 +1,9 @@
 import axios from "axios";
 
 const baseUrl = "http://127.0.0.1:1111";
+const accessToken = localStorage.getItem("accessToken")
+  ? localStorage.getItem("accessToken")
+  : null;
 
 // Api Post PhoneNumber
 // POST : get-otp
@@ -18,11 +21,28 @@ export const checkOtp = async (data) => {
 
 // Api Get CheckOtp
 // GET : get-me
-export const getMe = async (token) => {
+export const getMe = async () => {
   const response = await axios.get(`${baseUrl}/auth/get-me`, {
     headers: {
-      Authorization: `Bearar eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGUiOiIwOTAzNTQyNTg5MiIsImlhdCI6MTY5Mzk5NDY1MywiZXhwIjoxNjk0MDgxMDUzfQ.5YrcFmMEd-rlS5JMWPEQZJEoqxX7P0fgTU-M1BrjjDM`,
+      Authorization: `Bearer ${accessToken}`,
     },
   });
   return response.data;
+};
+
+// Api Add Category
+// POST : admin/category/add
+export const addCategory = async (data) => {
+  try {
+    const response = await axios.post(`${baseUrl}/admin/category/add`, data, {
+      headers: {
+        Accept: "aplication/json",
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+    return response;
+  } catch (error) {
+    return error.response;
+  }
 };
