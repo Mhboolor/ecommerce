@@ -4,7 +4,7 @@ import { MdAdd } from "react-icons/md";
 import AddCategory from "./content/AddCategory";
 import CategoryList from "./content/CategoryList";
 
-function Category() {
+function Categories() {
   const [showAddBox, setShowAddBox] = useState(false);
 
   const ShowBoxHandler = () => {
@@ -27,4 +27,4 @@ function Category() {
   );
 }
 
-export default Category;
+export default Categories;
