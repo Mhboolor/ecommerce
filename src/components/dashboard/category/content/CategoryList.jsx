@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useAllCategoryQuery } from "../../../../future/dashboard/category/categorySlice";
 import Loading from "../../Loading";
 import Error from "../../Error";

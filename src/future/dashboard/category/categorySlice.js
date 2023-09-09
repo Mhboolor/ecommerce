@@ -28,7 +28,19 @@ const categorySlice = apiSlice.injectEndpoints({
         { type: "Category", id: arg.id },
       ],
     }),
+    editCategory: builder.mutation({
+      query: (categoryId, data) => ({
+        url: `/admin/category/update/${categoryId}`,
+        method: "PUT",
+        body: data,
+      }),
+      invalidatesTags: (result, error, { id }) => [{ type: "Category", id }],
+    }),
   }),
 });
 
-export const { useAllCategoryQuery, useDeleteCategoryMutation } = categorySlice;
+export const {
+  useAllCategoryQuery,
+  useDeleteCategoryMutation,
+  useEditCategoryMutation,
+} = categorySlice;
