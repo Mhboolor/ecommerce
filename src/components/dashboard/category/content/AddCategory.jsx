@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import { addCategory } from "../../../../services/api";
 
 function AddCategory({ ShowBoxHandler }) {
+
   const {
     register,
     handleSubmit,

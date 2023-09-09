@@ -9,9 +9,9 @@ export const apiSlice = createApi({
         "Authorization",
         `Bearer ${localStorage.getItem("accessToken")}`
       );
-      return headers
+      return headers;
     },
   }),
-  tagTypes : ["Contact"],
+  tagTypes: ["Contact", "Category"],
   endpoints: () => ({}),
 });

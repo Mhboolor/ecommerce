@@ -43,7 +43,7 @@ function ContactList({ searchContact }) {
           </tbody>
         </table>
       ) : (
-        <Empty />
+        <Empty title={"هیچ مخاطبی وجود ندارد !"} />
       )}
     </div>
   );

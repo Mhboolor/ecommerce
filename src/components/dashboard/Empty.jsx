@@ -1,9 +1,9 @@
 import React from "react";
 
-function Empty() {
+function Empty({title}) {
   return (
     <div className="w-full h-full flex items-center justify-center">
-      <p>متاسفانه هیچ مخاطبی وجود ندارد</p>
+      <p>{title}</p>
     </div>
   );
 }
