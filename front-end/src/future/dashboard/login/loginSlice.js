@@ -73,7 +73,7 @@ const loginSlice = createSlice({
       .addCase(checkCode.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error;
-        if (state.otp !== action.payload.data.code) {
+        if (action.error) {
           toast.error("کد ارسالی صحیح نمیباشد !");
         } else {
           toast.error("خطایی در سرور رخ داده است !");
