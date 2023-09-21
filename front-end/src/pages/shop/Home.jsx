@@ -12,6 +12,7 @@ import {
   SsdBanner,
   Blogs,
 } from "../../components/shop/home/index";
+import Cart from "../../components/shop/cart/Cart";
 
 function Home() {
   return (
@@ -27,6 +28,7 @@ function Home() {
       <BestSelling />
       <SsdBanner />
       <Blogs />
+      <Cart/>
     </div>
   );
 }
