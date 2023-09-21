@@ -58,8 +58,8 @@ function Menu({ showMenu, showMenuHandler }) {
       </div>
       <nav className="container m-auto">
         <ul className="flex flex-col h-full w-full justify-around md:flex-row md:relative md:items-center">
-          {menu.map((item) => (
-            <li className="text-gray-4 group relative md:static">
+          {menu.map((item , index) => (
+            <li key={index} className="text-gray-4 group relative md:static">
               <Link
                 to={item.link}
                 className="text-base flex items-center py-3 hover:text-[#df1e2f] hover:border-b hover:border-b-[#df1e2f]"
@@ -71,8 +71,8 @@ function Menu({ showMenu, showMenuHandler }) {
               </Link>
               {item.subMenu.length ? (
                 <ul className="hidden sm:items-center justify-around gap-4 px-4 rounded text-xs bg-[#fff] shadow-sm w-full flex-col group-hover:flex md:group-hover:flex-row md:absolute sm:right-0">
-                  {item.subMenu.map((subItem) => (
-                    <li>
+                  {item.subMenu.map((subItem , index) => (
+                    <li key={index}>
                       <Link
                         to={subItem.link}
                         className="flex py-3 text-sm hover:text-[#df1e2f]"

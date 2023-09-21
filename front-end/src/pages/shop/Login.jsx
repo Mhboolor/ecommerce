@@ -1,12 +1,10 @@
-import { useState } from "react";
 import BreadCrumb from "../../components/BreadCrumb";
-import axios from "axios";
 
 import { useForm } from "react-hook-form";
 
 function Login() {
   const {
-    register, 
+    register,
     handleSubmit,
     formState: { errors },
   } = useForm();
@@ -29,7 +27,10 @@ function Login() {
           <p>کاربر گرامی، خوش آمدید.</p>
           <p>لطفا شماره موبایل خود را وارد نمایید</p>
         </div>
-        <form className="flex flex-col gap-5 w-full" onSubmit={handleSubmit(onSubmit)}>
+        <form
+          className="flex flex-col gap-5 w-full"
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <input
             {...register("mobile", {
               required: "! شماره موبایل اجباری میباشد",
@@ -51,24 +52,26 @@ function Login() {
             </p>
           )}
           <div className="flex flex-col gap-5 w-full">
-            <p className="text-sm text-[#212529] flex flex-col items-start w-full gap-1">
-              لطفا کد ارسالی را وارد کنید
-            </p>
             <input
-              type="tel"
+              {...register("code", {
+                required: {
+                  value: true,
+                  message: "کد فرستاده شده اجباری میباشد !",
+                },
+              })}
+              type="number"
+              id="phone"
+              placeholder="کد ارسال شده را وارد کنید ..."
               className="border rounded-lg flex-1 outline-none py-2 px-4"
-              placeholder="کد ارسالی ..."
             />
+            {errors.code && (
+              <p className="text-sm text-red-500 self-start">
+                {errors.code.message}
+              </p>
+            )}
           </div>
-          <button
-            className="bg-[#dc3545] border border-[#dc3545] rounded-lg py-2 flex-1 text-white"
-          >
+          <button className="bg-[#dc3545] border border-[#dc3545] rounded-lg py-2 flex-1 text-white">
             ادامه
-          </button>
-          <button
-            className="bg-[#dc3545] border border-[#dc3545] rounded-lg py-2 flex-1 text-white"
-          >
-            ورود
           </button>
         </form>
       </div>
