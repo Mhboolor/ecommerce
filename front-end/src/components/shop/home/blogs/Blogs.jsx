@@ -10,7 +10,7 @@ function Blogs() {
     <div className="container m-auto rounded-md bg-white shadow-md my-6 productsSlider">
       <div className="flex items-center justify-between px-4 py-2">
         <span className="text-gray-4 text-lg">مقالات</span>
-        <Link className="text-gray-link underline decoration-dotted">
+        <Link className="text-gray-link underline decoration-dotted" to={"/blogs"}>
           مشاهده وبلاگ
         </Link>
       </div>
